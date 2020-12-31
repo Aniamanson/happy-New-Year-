@@ -6,7 +6,7 @@ const congratulations  = ['Новогодняя сказка окутала до
 'Нет ничего лучше, чем встречать праздники в кругу любимых и близких! Пускай этот новый год принесет веселый смех, поддержку и много радостных воспоминаний, которые мы сможем разделить друг с другом!'];
 
 const frontImg = ['url(img/cat.png)', 'url(img/kitty.png)', 'url(img/jk.jpg)', 'url(img/Cats_Christmas_Kittens_507541.jpg)', 'url(img/tmb_153301_3822.jpg)', 'url(img/tmb_152263_6220.jpg)', 'url(img/depositphotos_210830500-stock-photo-black-british-shorthair-cat-christmas.jpg)'];
-const backImg = ['img/image_3094.jpg', 'img/IMG_4192.вебjpg.jpg', 'img/_original.jpg', 'img/001.jpg', 'img/unnamed.jpg', 'img/1328c239207233c23a03351e44ea9e03.jpg'];
+const backImg = ['img/image_3094.jpg', 'img/IMG_4192.вебjpg.jpg', 'img/original.jpg', 'img/001.jpg', 'img/unnamed.jpg', 'img/1328c239207233c23a03351e44ea9e03.jpg'];
 
 const text = document.querySelector('.inside-page__text');
 const front = document.querySelector('.card-front');

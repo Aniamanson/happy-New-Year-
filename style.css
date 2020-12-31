@@ -1,0 +1,605 @@
+/* CSS reset */
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+html { font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  position: relative;
+  overflow:  hidden;
+}
+
+/* Typography =======================*/
+@font-face {
+	font-family: 'mr_DopestyleG';
+	src: url('fonts/mr_dopestyleg.eot'); /* IE 9 Compatibility Mode */
+	src: url('fonts/mr_dopestyleg.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('fonts/mr_dopestyleg.woff2') format('woff2'), /* Super Modern Browsers */
+		url('fonts/mr_dopestyleg.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('fonts/mr_dopestyleg.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('fonts/mr_dopestyleg.svg#mr_dopestyleg') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+/* Headings */
+
+/* Main heading for card's front cover */
+.card-front__heading {
+  font-size: 40px;
+  font-family: 'mr_DopestyleG';
+}
+
+/* Main heading for inside page */
+.inside-page__heading { 
+  padding-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+/* Mixed */
+
+/* For both inside page's main heading and 'view me' text on card front cover */
+.inside-page__heading,
+.card-front__text-view {
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: .2rem;
+}
+
+.inside-page__heading--city,
+.card-front__text-view--city { color: #009cf7; }
+
+.inside-page__heading--ski,
+.card-front__text-view--ski { color: #2aaac1; }
+
+.inside-page__heading--beach,
+.card-front__text-view--beach { color: #fa7f67; }
+
+.inside-page__heading--camping,
+.card-front__text-view--camping { color: #00b97c; }
+
+/* Front cover */
+
+.card-front__tp { color: #fafbfa; }
+
+/* For pricing text on card front cover */
+.card-front__text-price {
+  font-size: 1.5rem;
+
+}
+
+/* Back cover */
+
+/* For inside page's body text */
+.inside-page__text {
+  color: #333;
+  font-size: 18px;
+  text-align: left;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+/* Icons ===========================================*/
+
+.card-front__icon {
+  fill: #fafbfa;
+  font-size: 3vw;
+  height: 3.25rem;
+  margin-top: -.5rem;
+  width: 3.25rem;
+}
+
+/* Buttons =================================================*/
+
+.inside-page__btn {
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  overflow: hidden;
+  padding: .7rem .75rem;
+  position: relative;
+  text-decoration: none;
+  transition: all .3s ease;
+  width: 90%;
+  z-index: 10;
+}
+
+.inside-page__btn::before { 
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleY(0);
+  transition: all .3s ease;
+  width: 100%;
+  z-index: -1;
+}
+
+.inside-page__btn--city { 
+  border-color: #ff40a1;
+  color: #ff40a1;
+}
+
+.inside-page__btn--city::before { 
+  background-color: #ff40a1;
+}
+
+.inside-page__btn--ski { 
+  border-color: #279eb2;
+  color: #279eb2;
+}
+
+.inside-page__btn--ski::before { 
+  background-color: #279eb2;
+}
+
+.inside-page__btn--beach { 
+  border-color: #fa7f67;
+  color: #fa7f67;
+}
+
+.inside-page__btn--beach::before { 
+  background-color: #fa7f67;
+}
+
+.inside-page__btn--camping { 
+  border-color: #00b97d;
+  color: #00b97d;
+}
+
+.inside-page__btn--camping::before { 
+  background-color: #00b97d;
+}
+
+.inside-page__btn:hover { 
+  color: #fafbfa;
+}
+
+.inside-page__btn:hover::before { 
+  transform: scaleY(1);
+}
+
+/* Layout Structure=========================================*/
+
+
+.main {
+  background: #1c3a4b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #acdeff;
+  margin: 15px auto 30px auto;
+  line-height: 24px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.btn {
+  padding: 15px 30px;
+  background: #e31303;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  outline: none !important;
+  border: none;
+  transition: all .5s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.btn:hover {
+  background: #b90d00;
+  transform: scale(1.1);
+}
+
+/* Container to hold all cards in one place */
+.card-area {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Card ============================================*/
+
+/* Area to hold an individual card */
+.card-section {
+  display: none;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+@keyframes santaMove {
+  from { 
+    transform: translateX(-500px); 
+  }
+  to {
+    transform: translateX(calc(100vw + 500px));
+  }
+}
+
+.santa {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  animation: santaMove 10s infinite ease-in;
+}
+
+.tree-img {
+  position: fixed;
+  left: -250px;
+  bottom: -100px;
+  width: 500px;
+  overflow: hidden;
+}
+.tree-img-2 {
+  position: fixed;
+  right: -250px;
+  bottom: -100px;
+  width: 500px;
+  overflow: hidden;
+}
+
+/* A container to hold the flip card and the inside page */
+.card {
+  background-color: rgba(0,0,0, .05);
+  box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
+  height: 400px;
+  position: relative;
+  transition: all 1s ease;
+  width: 400px;
+}
+
+/* Flip card - covering both the front and inside front page */
+
+/* An outer container to hold the flip card. This excludes the inside page */
+.flip-card {
+  height: 400px;
+  perspective: 100rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  width: 400px;
+  z-index: 100;
+}
+
+/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
+/* This is done so content in the inside page can be selected */
+.flip-card > * {
+  visibility: visible;
+}
+
+/* An inner container to hold the flip card. This excludes the inside page */
+.flip-card__container {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Styling for the front side of the flip card */
+
+/* container for the front side */
+.card-front {
+  background-color: #fafbfa;
+  height: 400px;
+  width: 400px;
+  background-image: url("img/kitty.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 70%;
+}
+
+/* Front side's top section */
+.card-front__tp {
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  justify-content: center;
+  padding: .75rem;
+  height: 16rem;
+}
+
+.card-front__tp--city {
+  background: #e31303;
+}
+
+.card-front__tp--ski {
+  background: linear-gradient(
+    to bottom,
+    #47c2d7,
+    #279eb2
+  );
+}
+
+.card-front__tp--beach {
+  background: linear-gradient(
+    to bottom,
+    #fb9b88,
+    #f86647
+  );
+}
+
+.card-front__tp--camping {
+  background: linear-gradient(
+    to bottom,
+    #00db93,
+    #00b97d
+  );
+}
+
+/* Front card's bottom section */
+.card-front__bt {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styling for the back side of the flip card */
+
+.card-back {
+  background-color: #fafbfa;
+  transform: rotateY(180deg);
+  /* transform: translateX(200px); */
+
+}
+
+/* Specifically targeting the <video> element */
+.img__container {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.img__container img {
+  height: 400px;
+  /* min-height: 100%; */
+  object-fit: cover;
+  width: 400px;
+}
+
+/* Inside page */
+
+.inside-page {
+  background-color: #fafbfa;
+  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0,0,0,0.25);
+  height: 100%;
+  padding: 30px;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  width: 400px;
+  z-index: 1;
+}
+
+.inside-page__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center; 
+  width: 100%;
+}
+
+/* Functionality ====================================*/
+
+/* This is to keep the card centered (within its container) when opened */
+.card:hover {
+  box-shadow:
+  -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.75);
+  width: 30rem;
+  transform: translateX(250px);
+}
+
+/* When the card is hovered, the flip card container will rotate */
+.card:hover .flip-card__container {
+  transform: rotateY(-180deg);
+  
+}
+
+/* When the card is hovered, the shadow on the inside page will shrink to the left */
+.card:hover .inside-page {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0,0,0,0.1);
+}
+
+/* Footer ====================================*/
+
+.footer {
+  background: url('img/snow.png');
+  background-size: contain;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.footer-text {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#Christmas_Lights {
+  height: 50%;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1000
+}
+
+.light_cord {
+  fill: none;
+  stroke: #174700;
+}
+
+.light_fixture {
+  fill: #134413;
+}
+
+.red_bulb {
+  fill: #CA2128;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.green_bulb {
+  fill: #2D754A;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.blue_bulb {
+  fill: #2C3EA8;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.white_bulb {
+  fill: #F5EED7;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.gold_bulb {
+  fill: #ffcc5e;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+
+/* Simply changing the opacity of the SVG fill to create the glow effect for the bulbs */
+
+.bulb {
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: glow;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  animation-name: glow;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    fill-opacity: 0.25;
+  }
+  100% {
+    fill-opacity: 1
+  }
+}
+
+@keyframes glow {
+  0% {
+    fill-opacity: 0.25;
+  }
+  100% {
+    fill-opacity: 1.0
+  }
+}
+
+
+/* Made a set of ten animation delays to create a more random effect of lights blinking.  Simplest way without jumping through SVG hoops. */
+
+.blink-1 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.blink-2 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.blink-3 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.blink-4 {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+}
+
+.blink-5 {
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+
+.blink-6 {
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+.blink-7 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.blink-8 {
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+}
+
+.blink-9 {
+  -webkit-animation-delay: 0.95s;
+  animation-delay: 0.95s;
+}
+
+.blink-10 {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
